@@ -62,4 +62,23 @@ public class File {
             System.out.println("El fichero ya existe");
         }
     }
+    /**
+     * comprobar si se tiene acceso de lectura y escritura por separado
+     */
+    private void modoAcceso(String dirName, String fileName) {
+        java.io.File file = new java.io.File(dirName, fileName);
+        if (file.canRead()) {
+            System.out.println("lectura si");
+        }
+        else {
+            System.out.println("lectura no");
+        }
+        if (file.canWrite()) {
+            System.out.println("escritura si");
+        }
+        else {
+            System.out.println("escritura no");
+        }
+
+    }
 }
