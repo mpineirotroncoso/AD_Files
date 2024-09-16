@@ -63,7 +63,9 @@ public class File {
         }
     }
     /**
-     * comprobar si se tiene acceso de lectura y escritura por separado
+     * comprobar si se tiene acceso de lectura y escritura
+     * @param dirName ruta del directorio
+     * @param fileName nombre del fichero
      */
     private void modoAcceso(String dirName, String fileName) {
         java.io.File file = new java.io.File(dirName, fileName);
@@ -79,6 +81,44 @@ public class File {
         else {
             System.out.println("escritura no");
         }
+    }
 
+    /**
+     * imprimir longitud en bytes de fichero
+     * @param dirName ruta del directorio
+     * @param fileName nombre del fichero
+     */
+    private void longitudFicheiro(String dirName, String fileName) {
+        java.io.File file = new java.io.File(dirName, fileName);
+        System.out.println("Longitud en bytes: " + file.length());
+    }
+
+    /**
+     * hacer el fichero de solo lectura
+     * @param dirName ruta del directorio
+     * @param fileName nombre del fichero
+     */
+    private void mLectura(String dirName, String fileName) {
+        java.io.File file = new java.io.File(dirName, fileName);
+        if (file.setReadOnly()) {
+            System.out.println("Solo lectura");
+        }
+        else {
+            System.out.println("No se pudo hacer solo lectura");
+        }
+    }
+
+    /**
+     * hacer el fichero de solo escritura
+     * @param dirName ruta del directorio
+     * @param fileName nombre del fichero
+     */
+    private void mEscritura(String dirName, String fileName) {
+        java.io.File file = new java.io.File(dirName, fileName);
+        if (file.setWritable(true)) {
+            System.out.println("Solo escritura");
+        } else {
+            System.out.println("No se pudo hacer solo escritura");
+        }
     }
 }
