@@ -1,3 +1,4 @@
+
 public class File {
     /**
      * Comprueba si es un directorio
@@ -24,6 +25,41 @@ public class File {
         }
         else {
             System.out.println("no es un fichero");
+        }
+    }
+
+    /**
+     * Crear directorio, solo debe crearse cuando no exista
+     * @param ruta del directorio que se crea
+     */
+    private void creaDirectorio(String ruta) {
+        java.io.File file = new java.io.File(ruta);
+        if (!file.exists()) {
+            file.mkdir();
+            System.out.println("Directorio creado");
+        }
+        else {
+            System.out.println("El directorio ya existe");
+        }
+    }
+
+    /**
+     * Crear fichero en una ruta que existe, solo debe crearse cuando no exista
+     * @param dirName ruta del directorio
+     * @param fileName nombre del fichero
+     */
+    private void creaFicheiro(String dirName, String fileName) {
+        java.io.File file = new java.io.File(dirName, fileName);
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+                System.out.println("Fichero creado");
+            } catch (java.io.IOException e) {
+                System.out.println("Error al crear el fichero");
+            }
+        }
+        else {
+            System.out.println("El fichero ya existe");
         }
     }
 }
