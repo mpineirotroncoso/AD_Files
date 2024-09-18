@@ -4,7 +4,7 @@ public class File {
      * Comprueba si es un directorio
      * @param path ruta del directorio a comprobar
      */
-    private void eDirectorio(String path)  {
+    public void eDirectorio(String path)  {
         java.io.File file = new java.io.File(path);
         if (file.isDirectory()) {
             System.out.println("es un directorio");
@@ -18,7 +18,7 @@ public class File {
      * Comprueba si es un fichero
      * @param path ruta del directorio a comprobar
      */
-    private void eFicheiro(String path)  {
+    public void eFicheiro(String path)  {
         java.io.File file = new java.io.File(path);
         if (file.isFile()) {
             System.out.println("es un fichero");
@@ -32,7 +32,7 @@ public class File {
      * Crear directorio, solo debe crearse cuando no exista
      * @param ruta del directorio que se crea
      */
-    private void creaDirectorio(String ruta) {
+    public void creaDirectorio(String ruta) {
         java.io.File file = new java.io.File(ruta);
         if (!file.exists()) {
             file.mkdir();
@@ -48,7 +48,7 @@ public class File {
      * @param dirName ruta del directorio
      * @param fileName nombre del fichero
      */
-    private void creaFicheiro(String dirName, String fileName) {
+    public void creaFicheiro(String dirName, String fileName) {
         java.io.File file = new java.io.File(dirName, fileName);
         if (!file.exists()) {
             try {
@@ -67,7 +67,7 @@ public class File {
      * @param dirName ruta del directorio
      * @param fileName nombre del fichero
      */
-    private void modoAcceso(String dirName, String fileName) {
+    public void modoAcceso(String dirName, String fileName) {
         java.io.File file = new java.io.File(dirName, fileName);
         if (file.canRead()) {
             System.out.println("lectura si");
@@ -88,7 +88,7 @@ public class File {
      * @param dirName ruta del directorio
      * @param fileName nombre del fichero
      */
-    private void longitudFicheiro(String dirName, String fileName) {
+    public void longitudFicheiro(String dirName, String fileName) {
         java.io.File file = new java.io.File(dirName, fileName);
         System.out.println("Longitud en bytes: " + file.length());
     }
@@ -98,7 +98,7 @@ public class File {
      * @param dirName ruta del directorio
      * @param fileName nombre del fichero
      */
-    private void mLectura(String dirName, String fileName) {
+    public void mLectura(String dirName, String fileName) {
         java.io.File file = new java.io.File(dirName, fileName);
         if (file.setReadOnly()) {
             System.out.println("Solo lectura");
@@ -113,7 +113,7 @@ public class File {
      * @param dirName ruta del directorio
      * @param fileName nombre del fichero
      */
-    private void mEscritura(String dirName, String fileName) {
+    public void mEscritura(String dirName, String fileName) {
         java.io.File file = new java.io.File(dirName, fileName);
         if (file.setWritable(true)) {
             System.out.println("Solo escritura");
@@ -127,7 +127,7 @@ public class File {
      * @param dirName ruta del directorio
      * @param fileName nombre del fichero
      */
-    private void borraFicheiro(String dirName, String fileName) {
+    public void borraFicheiro(String dirName, String fileName) {
         java.io.File file = new java.io.File(dirName, fileName);
         if (file.delete()) {
             System.out.println("Fichero borrado");
@@ -140,7 +140,7 @@ public class File {
      * borrar un directorio, si no existe mostrar ruta inexistente o con descendencia
      * @param dirName ruta del directorio
      */
-    private void borraDirectorio(String dirName) {
+    public void borraDirectorio(String dirName) {
         java.io.File file = new java.io.File(dirName);
         if (file.delete()) {
             System.out.println("Directorio borrado");
@@ -153,7 +153,7 @@ public class File {
      * mostrar archivos y de primer nivel de una ruta
      * @param dirName ruta del directorio
      */
-    private void mContido(String dirName) {
+    public void mContido(String dirName) {
         java.io.File file = new java.io.File(dirName);
         String[] files = file.list();
         for (String f : files) {
