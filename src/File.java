@@ -4,13 +4,15 @@ public class File {
      * Comprueba si es un directorio
      * @param path ruta del directorio a comprobar
      */
-    public void eDirectorio(String path)  {
+    public boolean eDirectorio(String path)  {
         java.io.File file = new java.io.File(path);
         if (file.isDirectory()) {
             System.out.println("es un directorio");
+            return true;
         }
         else {
             System.out.println("no es un directorio");
+            return false;
         }
     }
 
@@ -18,13 +20,15 @@ public class File {
      * Comprueba si es un fichero
      * @param path ruta del directorio a comprobar
      */
-    public void eFicheiro(String path)  {
+    public boolean eFicheiro(String path)  {
         java.io.File file = new java.io.File(path);
         if (file.isFile()) {
             System.out.println("es un fichero");
+            return true;
         }
         else {
             System.out.println("no es un fichero");
+            return false;
         }
     }
 
