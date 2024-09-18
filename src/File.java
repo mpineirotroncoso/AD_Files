@@ -164,4 +164,19 @@ public class File {
             System.out.println(f);
         }
     }
+
+    /**
+     * mostrar todos los archivos y subdirectorios del directorio que se pase como objeto File
+     * @param file objeto File
+     */
+    public void recur(java.io.File file) {
+        if (file.isDirectory()) {
+            String[] files = file.list();
+            for (String f : files) {
+                recur(new java.io.File(file, f));
+            }
+        } else {
+            System.out.println(file);
+        }
+    }
 }

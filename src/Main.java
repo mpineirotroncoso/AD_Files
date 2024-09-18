@@ -43,5 +43,9 @@ public class Main {
         file.borraFicheiro(dirName,"subdir/Products2.txt");
         file.borraDirectorio(dirName + "subdir/");
         file.borraDirectorio(dirName);
+
+        // 10
+        java.io.File fileRecur = new java.io.File (dirName);
+        file.recur(fileRecur);
     }
 }
