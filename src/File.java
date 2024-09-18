@@ -121,4 +121,43 @@ public class File {
             System.out.println("No se pudo hacer solo escritura");
         }
     }
+
+    /**
+     * borrar un fichero, si no existe mostrar fichero inexistente
+     * @param dirName ruta del directorio
+     * @param fileName nombre del fichero
+     */
+    private void borraFicheiro(String dirName, String fileName) {
+        java.io.File file = new java.io.File(dirName, fileName);
+        if (file.delete()) {
+            System.out.println("Fichero borrado");
+        } else {
+            System.out.println("Fichero inexistente");
+        }
+    }
+
+    /**
+     * borrar un directorio, si no existe mostrar ruta inexistente o con descendencia
+     * @param dirName ruta del directorio
+     */
+    private void borraDirectorio(String dirName) {
+        java.io.File file = new java.io.File(dirName);
+        if (file.delete()) {
+            System.out.println("Directorio borrado");
+        } else {
+            System.out.println("Ruta inexistente o con descendencia");
+        }
+    }
+
+    /**
+     * mostrar archivos y de primer nivel de una ruta
+     * @param dirName ruta del directorio
+     */
+    private void mContido(String dirName) {
+        java.io.File file = new java.io.File(dirName);
+        String[] files = file.list();
+        for (String f : files) {
+            System.out.println(f);
+        }
+    }
 }
